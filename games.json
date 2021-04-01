@@ -1,0 +1,34 @@
+{
+  "Absurdly Extra Patch": {
+    "installed": false,
+    "path": ""
+  },
+  "Game Enhancement Patcher": {
+    "installed": false,
+    "path": ""
+  },
+  "Gameskip Patch": {
+    "installed": false,
+    "path": ""
+  },
+  "LE01": {
+    "En_activated": true,
+    "English Patch": "data/LE01_EN",
+    "path": "C:\\Bordel sans nom\\jeux\\Len'en\\Le01_1_20a"
+  },
+  "LE02": {
+    "En_activated": false,
+    "English Patch": "",
+    "path": "C:\\Bordel sans nom\\jeux\\Len'en\\Le02_1_20a"
+  },
+  "LE03": {
+    "En_activated": false,
+    "English Patch": "",
+    "path": "C:\\Bordel sans nom\\jeux\\Len'en\\Le03_1_21a"
+  },
+  "LE04": {
+    "En_activated": false,
+    "English Patch": "",
+    "path": "C:\\Bordel sans nom\\jeux\\Len'en\\Le04_1_20f"
+  }
+}

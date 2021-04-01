@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            .games {
+                border: 1px black solid;
+                border-radius: 5px;
+                height: 100px;
+                text-align: center;
+                text-decoration: none;
+                color: white;
+                text-shadow: 1px 1px 1px black;
+                margin-bottom: 10px;
+            }
+
+            .LE01 {
+                background-image: url("{{ url_for('static', filename='images/EE.jpg') }}");
+                background-position-y: 400px;
+                transition: color 0.5s;
+            }
+
+            .LE01:hover {
+                color: #AFAFAF;
+            }
+
+            .LE02 {
+                background-image: url("{{ url_for('static', filename='images/EMS.jpg') }}");
+                background-position-y: 350px;
+                transition: color 0.5s;
+            }
+
+            .LE02:hover {
+                color: #AFAFAF;
+            }
+
+            .LE03 {
+                background-image: url("{{ url_for('static', filename='images/RMI.jpg') }}");
+                background-position-y: 250px;
+                transition: color 0.5s;
+            }
+
+            .LE03:hover {
+                color: #AFAFAF;
+            }
+
+            .LE04 {
+                background-image: url("{{ url_for('static', filename='images/BPoHC.jpg') }}");
+                background-position-y: 400px;
+                transition: color 0.5s;
+            }
+
+            .LE04:hover {
+                color: #AFAFAF;
+            }
+
+            a:hover {
+                text-decoration: none;
+            }
+        </style>
+        <title>Len'en Launcher - Games</title>
+    </head>
+    <body>
+        <nav class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('home') }}">Games</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('mods') }}">Mods</a>
+            </li>
+        </nav>
+        <div class="container-fluid" style="margin-top:30px">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a href="{{ url_for('launch', game='LE01') }}">
+                        <div class="games LE01">
+                            <br><b>Evanescent Existence</b>
+                            <br>LE01 - EE
+                        </div>
+                    </a>
+                    <a href="{{ url_for('launch', game='LE02') }}">
+                        <div class="games LE02">
+                            <br><b>Earthen Miraculous Sword</b>
+                            <br>LE02 - EMS
+                        </div>
+                    </a>
+                    <a href="{{ url_for('launch', game='LE03') }}">
+                        <div class="games LE03">
+                            <br><b>Reactivate Majestical Imperial</b>
+                            <br>LE03 - RMI
+                        </div>
+                    </a>
+                    <a href="{{ url_for('launch', game='LE04') }}">
+                        <div class="games LE04">
+                            <br><b>Brillant Padoga or Haze Castle</b>
+                            <br>LE04 - BPoHC
+                        </div>
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <form action="" method="POST">
+                        {{ gamespath.hidden_tag() }}
+                        {{ gamespath.path1.label(class="form-control-label") }}
+                        {{ gamespath.path1(class="form-control sm") }}
+                        {{ gamespath.submit(class="btn btn-sm btn-outline-info", style="margin-bottom: 8px;") }}<br>
+                        {{ gamespath.path2.label(class="form-control-label") }}
+                        {{ gamespath.path2(class="form-control sm") }}
+                        {{ gamespath.submit(class="btn btn-sm btn-outline-info", style="margin-bottom: 8px;") }}<br>
+                        {{ gamespath.path3.label(class="form-control-label") }}
+                        {{ gamespath.path3(class="form-control sm") }}
+                        {{ gamespath.submit(class="btn btn-sm btn-outline-info", style="margin-bottom: 8px;") }}<br>
+                        {{ gamespath.path4.label(class="form-control-label") }}
+                        {{ gamespath.path4(class="form-control sm") }}
+                        {{ gamespath.submit(class="btn btn-sm btn-outline-info") }}
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% if err_mess != "" %}
+            <div style="min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            right: 50%;
+            bottom: 30px;">{{ err_mess }}</div>
+        {% endif %}
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>

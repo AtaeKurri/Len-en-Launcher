@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Len'en Launcher - Downloads</title>
+    </head>
+    <body>
+        <nav class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('home') }}">Games</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ url_for('mods') }}">Mods</a>
+            </li>
+        </nav>
+        <div class="container-fluid" style="margin-top:30px">
+            <div style="margin-bottom: 20px; color: red;">
+                Please wait for the button "Activate" to appear after downloading something.<br>
+                Otherwise, something will most likely break.<br>
+                Same thing with activating, wait for the "unload" button to appear please.<br>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h5>Mods for LE01 - EE</h5>
+                    {% if not data["Game Enhancement Patcher"]["installed"] %}
+                        Game Enhancement Patcher : <a href="#">Download</a><br>
+                    {% else %}
+                    Game Enhancement Patcher : <a href="#">Activate</a><br>
+                    {% endif %}
+                    {% if data["LE01"]["English Patch"] == "" %}
+                        English Patch : <a href="{{ url_for('download', wtdl='En_LE01') }}">Download</a>
+                    {% else %}
+                        {% if not data["LE01"]["En_activated"] %}
+                            English Patch : <a href="{{ url_for('activate', wta='En_LE01') }}">Activate</a>
+                        {% else %}
+                            English Patch : <a href="{{ url_for('unload', wtu='En_LE01') }}">Unload</a>
+                        {% endif %}
+                    {% endif %}
+                    <br><br>
+                    <h5>Mods for LE03 - RMI</h5>
+                    Game Enhancement Patcher : <a href="#">Download</a><br>
+                    Absurdly Extra Patch : <a href="#">Download</a><br>
+                    English Patch : <a href="#">Download</a>
+                </div>
+                <div class="col-sm-6">
+                    <h5>Mods for LE02 - EMS</h5>
+                    Game Enhancement Patcher : <a href="#">Download</a><br>
+                    English Patch : <a href="#">Download</a>
+                    <br><br>
+                    <h5>Mods for LE04 - BPoHC</h5>
+                    Gameskip Patch : <a href="#">Download</a><br>
+                    English Patch : <a href="#">Download</a>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
